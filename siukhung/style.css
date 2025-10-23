@@ -1,0 +1,281 @@
+/* --- BIẾN MÀU MỚI (CHỦ ĐỀ XANH DƯƠNG NHẠT) --- */
+:root {
+    --primary-color: #0d6efd; /* Màu xanh Bootstrap */
+    --secondary-color: #0a58ca;
+    
+    /* Màu nền chuyển động */
+    --bg-color-1: #e0f7fa; /* Xanh cyan nhạt */
+    --bg-color-2: #b3e5fc; /* Xanh trời nhạt */
+    --bg-color-3: #E1F5FE; /* Xanh dương siêu nhạt */
+
+    --card-color: rgba(255, 255, 255, 0.7); /* Nền thẻ (Hiệu ứng kính mờ) */
+    --text-dark: #212529; /* Màu chữ đen */
+    
+    /* Gradient mới cho chữ */
+    --gradient-text: linear-gradient(90deg, #0d6efd, #6f42c1, #d63384);
+}
+
+/* --- GHI ĐÈ BOOTSTRAP LIGHT MODE --- */
+body[data-bs-theme="light"] {
+    color: var(--text-dark);
+    
+    /* --- NỀN 3D CHUYỂN ĐỘNG (NHẸ) --- */
+    background: linear-gradient(
+        -45deg, 
+        var(--bg-color-1), 
+        var(--bg-color-2), 
+        var(--bg-color-3),
+        var(--bg-color-1)
+    );
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
+    /* ---------------------------------- */
+}
+
+/* Keyframe cho hiệu ứng chuyển động */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hidden { display: none !important; }
+.text-warning { color: #fd7e14 !important; } /* Đổi màu vàng thành cam cho nổi */
+
+/* 1. Thanh thông báo (Giữ nguyên) */
+.top-announcement-bar {
+    background-color: #f7b801;
+    color: #111;
+    font-weight: bold;
+}
+
+/* 2. Navbar "Pro" (Nền Kính mờ) */
+.custom-navbar {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.navbar-brand, .nav-link { color: var(--text-dark) !important; }
+.nav-link:hover { color: var(--primary-color) !important; }
+
+.btn-category {
+    background-color: var(--primary-color);
+    color: white !important;
+    border-radius: 20px;
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.9rem;
+}
+.btn-category:hover { background-color: var(--secondary-color); }
+.custom-dropdown {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+}
+.dropdown-item { color: var(--text-dark) !important; }
+.dropdown-item:hover {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+}
+.dropdown-item i {
+    width: 20px;
+    text-align: center;
+    margin-right: 0.5rem;
+}
+/* Sửa lỗi CSS search bar của Bootstrap 5.3 */
+.search-bar .form-control {
+    background-color: #ffffff;
+    border-color: #ced4da;
+    color: var(--text-dark);
+    border-right: none;
+    border-radius: 20px 0 0 20px;
+}
+.search-bar .form-control:focus {
+    background-color: #ffffff;
+    border-color: var(--primary-color);
+    box-shadow: none;
+}
+.search-bar .btn {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 0 20px 20px 0;
+}
+.search-bar .btn:hover { background-color: var(--secondary-color); }
+
+/* 3. Hero Banner */
+.hero {
+    /* Overlay trắng mờ thay vì đen */
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('https://via.placeholder.com/1920x1080/000000/FFFFFF?text=Cool+Background') no-repeat center center/cover;
+    color: var(--text-dark); /* Chữ đen */
+}
+.gradient-text {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.btn-primary-gradient {
+    /* Gradient xanh dương "pro" */
+    background: linear-gradient(90deg, #0d6efd, #6f42c1);
+    color: white !important;
+    border: none;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s ease;
+}
+.btn-primary-gradient:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 4. Thẻ Sản Phẩm (Nền Kính mờ) */
+.product-card, .custom-card-container, .auth-container {
+    background-color: var(--card-color) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 15px !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    color: var(--text-dark);
+}
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+.product-card .card-title { color: var(--text-dark); }
+.card-body p, .card-body .card-text { color: var(--text-dark); }
+
+/* 5. Ghi đè form, login, cart... */
+.form-control {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: var(--text-dark);
+}
+.form-control::placeholder { color: #6c757d; }
+.form-control:focus {
+    background-color: #ffffff;
+    color: var(--text-dark);
+}
+.auth-container .nav-tabs { border-bottom-color: rgba(0, 0, 0, 0.1); }
+.auth-container .nav-link { color: #666; border-bottom: 3px solid transparent; }
+.auth-container .nav-link.active {
+    color: var(--text-dark);
+    border-bottom-color: var(--primary-color);
+    background-color: transparent;
+}
+.cart-table {
+    --bs-table-bg: transparent;
+    --bs-table-border-color: rgba(0, 0, 0, 0.1);
+    --bs-table-color: var(--text-dark);
+}
+.cart-table th { color: var(--text-dark); }
+.list-group-item {
+    background-color: transparent;
+    border-color: rgba(0, 0, 0, 0.1);
+    color: var(--text-dark);
+}
+.payment-option {
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+.payment-option:hover { border-color: var(--primary-color); }
+.payment-option img { border-radius: 5px; margin-right: 10px; }
+
+/* 6. Nút liên hệ nổi (Giữ nguyên) */
+.floating-contact {
+    position: fixed;
+    bottom: 30px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999;
+}
+.floating-contact a {
+    width: 50px;
+    height: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+.floating-contact a:hover { transform: scale(1.1); }
+.floating-contact .zalo { background-color: #0068ff; }
+.floating-contact .messenger { background-color: #0078FF; }
+.floating-contact #scroll-to-top { background-color: #555; }
+
+/* 7. Footer "Pro" (Nền Kính mờ) */
+.custom-footer {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    color: var(--text-dark);
+}
+
+/* --- CSS "CHUYÊN SÂU" (CHO TOAST) --- */
+.toast-container {
+    z-index: 1100; /* Đè lên trên mọi thứ */
+}
+.toast {
+    /* Dùng hiệu ứng kính mờ cho toast */
+    background-color: var(--card-color) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 10px !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    color: var(--text-dark);
+}
+.toast-header {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--text-dark);
+}
+/* Trạng thái thành công/lỗi (ghi đè Bootstrap) */
+.toast-header.text-bg-success {
+    background-color: rgba(25, 135, 84, 0.8) !important;
+    color: white !important;
+}
+.toast-header.text-bg-danger {
+    background-color: rgba(220, 53, 69, 0.8) !important;
+    color: white !important;
+}
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+.toast-header.text-bg-success .btn-close,
+.toast-header.text-bg-danger .btn-close {
+    filter: none; /* Trả về màu trắng cho nền tối */
+}
+
+/* --- CSS "CHUYÊN SÂU" CHO COUPON --- */
+.coupon-form .form-control {
+    border-right: none;
+}
+.coupon-form .btn {
+    border-radius: 0 20px 20px 0 !important;
+}
+#discount-row {
+    font-weight: bold;
+}
+
+/* --- CSS "CHUYÊN SÂU" CHO THANH TOÁN QR --- */
+.payment-details {
+    text-align: center;
+    margin: 1rem 0 0 0;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.3); /* Nền sáng hơn 1 chút */
+    border-radius: 10px;
+    border-top: 2px solid var(--primary-color);
+}
+.payment-details .img-thumbnail {
+    max-width: 200px;
+    background-color: white; /* Nền trắng cho QR */
+    border: 5px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
